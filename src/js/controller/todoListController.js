@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-class TodoListController {
+export default class TodoListController {
   constructor($scope) {
     this.$scope = $scope;
     this.$scope.todos = [];
@@ -28,5 +28,3 @@ class TodoListController {
     this.$scope.todos[index].done = true;
   }
 }
-
-export default TodoListController

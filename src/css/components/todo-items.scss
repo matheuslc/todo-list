@@ -1,0 +1,63 @@
+.items-todo {
+
+}
+
+.items {
+  padding-left: 0;
+}
+
+.item {
+  position: relative;
+  list-style: none;
+  padding: 15px 40px;
+}
+
+.item-done {
+  text-indent: -9999px;
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.item-delete {
+  text-indent: -9999px;
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+
+  &:after {
+    content: '';
+    background-color: red;
+    display: inline-block;
+    width: 2px;
+    height: 15px;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &:before {
+    content: '';
+    background-color: red;
+    display: inline-block;
+    width: 2px;
+    height: 15px;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}
+
+.item-completed {
+
+  .item-text {
+    text-decoration: line-through;
+  }
+}

@@ -1,0 +1,79 @@
+.todo-input {
+  padding: 25px 15px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.todo-item-label {
+  display: block;
+  margin-bottom: 10px;
+
+  @extend .todo-item-label-default;
+}
+
+.todo-item {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+
+  @extend .todo-item-default;
+}
+
+// UI classes
+.todo-item-label-default {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.todo-item-default {
+  text-align: center;
+  border: 0;
+  border-bottom: 1  px solid #000;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border: 0;
+}
+
+.btn-default {
+
+  @extend .btn;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
+}

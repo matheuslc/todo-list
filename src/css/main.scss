@@ -1,0 +1,25 @@
+@import 'components/form.scss';
+@import 'components/todo-items.scss';
+
+html {
+  font-size: 10px;
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.todo-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+}
