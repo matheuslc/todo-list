@@ -3,10 +3,40 @@
   <head>
     <meta charset="utf-8">
     <title>Todo-list</title>
-  </head>
-  <body>
 
-
+    <script type="text/javascript" src="js/vendors.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-  </body>
+  </head>
+  <body ng-app="todoList">
+    <section ng-controller="todoListController as t">
+      <form class="" ng-submit="t.addTodo(todo)" method="post">
+        <input type="text"
+          name="todo-item"
+          placeholder="Just do it!"
+          value=""
+          ng-model="todo.text">
+
+        <input type="submit" name="name" value="Go!">
+      </form>
+
+      <section>
+        <ul ng-repeat="todo in todos">
+          <li>
+            <span ng-click="t.toggleTodoStatus(todo)" ng-model="todo.done">Done</span>
+
+            {{ todo.text }}
+
+            <span ng-click="t.deleteTodo(todo)">Deletar</span>
+          </li>
+        </ul>
+
+        <span>{{ todos.length }} to-do</span>
+      </section>
+
+      {{ todos }}
+
+    </section>
+
+
+    </body>
 </html>
