@@ -4,10 +4,25 @@ export default class TodoListController {
   constructor($scope) {
     this.$scope = $scope;
     this.$scope.todos = [];
+    this.$scope.error = 'Not yet :)';
   }
 
   addTodo(todo) {
-    this.$scope.todos.push(angular.copy(todo));
+    if (todo.text.length > 5) {
+      this.$scope.todos.push(angular.copy(todo));
+
+      todo = null;
+    } else {
+      this.$scope.error = 'Please! A to-do with 5 caracters min.'
+    }
+  }
+
+  editItem(todo) {
+    todo.editing = true;
+  }
+
+  doneEditing(todo) {
+    todo.editing = false;
   }
 
   deleteTodo(todo) {

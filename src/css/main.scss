@@ -1,3 +1,4 @@
+@import '_variables.scss';
 @import 'components/form.scss';
 @import 'components/todo-items.scss';
 
@@ -15,11 +16,14 @@ body {
   padding: 0;
   margin: 0;
   font-size: 1rem;
+  background-color: $bg-color;
 }
 
 .todo-wrapper {
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
-
+  margin: 60px auto;
+  padding: 15px 0;
+  background-color: $todo-bg-color;
+  box-shadow: 1px 8px 7px $box-shadow;
 }

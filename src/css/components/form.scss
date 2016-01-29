@@ -1,5 +1,5 @@
 .todo-input {
-  padding: 25px 15px;
+  padding: 10px 15px;
 }
 
 .form-control {
@@ -30,37 +30,71 @@
 .todo-item-default {
   text-align: center;
   border: 0;
-  border-bottom: 1  px solid #000;
+  border-bottom: 1px solid #333;
 }
 
 .btn {
   display: block;
   width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
   padding: 10px 20px;
-  border: 0;
 }
 
 .btn-default {
-
   @extend .btn;
+
+  background-color: $btn-default-color;
+  color: $btn-text-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 0;
+  border-radius: 6px;
+  border-bottom: 2px solid darken($btn-default-color, 20%);
 }
 
+.alert-msg {
+  text-align: center;
+}
 
+.alert-confirm-message {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
 
+.alert-msg-btn-confirm {
+  @extend .btn;
 
+  display: inline-block;
+  background-color: $btn-confirm-color;
+  color: $btn-text-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 0;
+  border-radius: 6px;
+  border-bottom: 2px solid darken($btn-confirm-color, 20%);
+  padding: 5px 10px;
+  max-width: 80px;
+}
 
+.alert-msg-btn-close {
+  @extend .btn;
 
+  display: inline-block;
+  background-color: $btn-close-color;
+  color: $btn-text-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 0;
+  border-radius: 6px;
+  border-bottom: 2px solid darken($btn-close-color, 20%);
+  padding: 5px 10px;
+  max-width: 80px;
+}
 
-
-
-
-
-
-
-
-
-
-
+.alert-msg {
+  padding: 10px 15px;
+}
 
 ::-webkit-input-placeholder {
    text-align: center;
