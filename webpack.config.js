@@ -6,6 +6,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     app: path.resolve(__dirname, 'src/js/app.js'),
+    vendors: ['angular']
   },
   output: {
     path: path.resolve(__dirname, 'dist/js'),
