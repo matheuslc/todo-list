@@ -4,41 +4,57 @@
     <meta charset="utf-8">
     <title>Todo-list</title>
 
-    <script type="text/javascript" src="js/vendors.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,300,300italic,700,700italic' rel='stylesheet' type='text/css'>
   </head>
   <body ng-app="todoList">
     <section ng-controller="todoListController as t" class="todo-wrapper">
       <div class="todo-input">
         <form class="" ng-submit="t.addTodo(todo)" method="post">
+          {{ error }}
           <div class="form-control">
-            <label for="todo-item">Yesterday you said tomorrow</label>
+            <label for="todo-item-" class="todo-item-label">Yesterday you said tomorrow</label>
 
             <input type="text"
               name="todo-item"
-              placeholder="Just do it!"
+              placeholder="What you will do today?"
               value=""
-              ng-model="todo.text">
+              ng-model="todo.text"
+              class="todo-item" />
           </div>
 
-          <input type="submit" name="name" value="Go!">
+          <input type="submit" class="btn-default" name="name" value="Just do it!">
         </form>
       </div>
 
+      <section class="items-todo" ng-show="todos.length">
+        <div class="alert-msg" alert-msg></div>
 
-      <section>
-        <ul ng-repeat="todo in todos">
-          <li>
-            <span ng-click="t.toggleTodoStatus(todo)" ng-model="todo.done">Done</span>
+        <h1 class="todo-list-title">This is yours things to do. Remember. Just do it!</h1>
 
-            {{ todo.text }}
+        <ul class="items">
+          <li class="item" ng-class="{'item-completed': todo.done == true}" ng-repeat="todo in todos">
+            <span ng-click="t.toggleTodoStatus(todo)"
+              ng-model="todo.done"
+              class="item-done">
+                Done
+            </span>
 
-            <span ng-click="t.deleteTodo(todo)">Deletar</span>
+            <span ng-show="!todo.editing" class="item-text" ng-dblclick="t.editItem(todo)">
+              {{ todo.text }}
+            </span>
+
+            <input ng-show="todo.editing" ng-model="todo.text" ng-blur="t.doneEditing(todo)" autofocus />
+
+            <span class="item-delete"
+                  ng-click="open(todo)">
+                    Deletar
+            </span>
           </li>
         </ul>
-
-        <span>{{ todos.length }} to-do</span>
       </section>
     </section>
+
+    <script type="text/javascript" src="js/vendors.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>
